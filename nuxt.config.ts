@@ -1,5 +1,6 @@
+import { fileURLToPath } from 'node:url'
 import { pwa } from './config/pwa'
-import { appDescription } from './constants/index'
+import { appDescription, cms } from './constants/index'
 
 export default defineNuxtConfig({
   modules: [
@@ -9,7 +10,16 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
     '@nuxt/eslint',
+    'nuxt-directus',
   ],
+
+  runtimeConfig: {
+    public: {
+      directus: {
+        url: cms,
+      },
+    },
+  },
 
   experimental: {
     // when using generate, payload js assets included in sw precache manifest
@@ -73,5 +83,17 @@ export default defineNuxtConfig({
     config: {
       standalone: false,
     },
+  },
+
+  alias: {
+    '@dto': fileURLToPath(
+      new URL('./dto', import.meta.url),
+    ),
+    '@schemas': fileURLToPath(
+      new URL('./schemas', import.meta.url),
+    ),
+    '@entities': fileURLToPath(
+      new URL('./entities', import.meta.url),
+    ),
   },
 })
