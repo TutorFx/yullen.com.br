@@ -1,5 +1,5 @@
 import type { IBlogQuery } from "@dto/Blog"
-import { BlogQuerySchema } from "~/schemas/Blog"
+import { BlogQuerySchema } from "~/_schemas/Blog"
 
 export default defineEventHandler(async (event) => {
   const query = getQuery<IBlogQuery>(event)

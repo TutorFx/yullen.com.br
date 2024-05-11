@@ -87,13 +87,13 @@ export default defineNuxtConfig({
 
   alias: {
     '@dto': fileURLToPath(
-      new URL('./dto', import.meta.url),
+      new URL('./_dto', import.meta.url),
     ),
     '@schemas': fileURLToPath(
-      new URL('./schemas', import.meta.url),
+      new URL('./_schemas', import.meta.url),
     ),
     '@entities': fileURLToPath(
-      new URL('./entities', import.meta.url),
+      new URL('./_entities', import.meta.url),
     ),
   },
 })

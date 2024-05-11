@@ -3,8 +3,8 @@ import { ZodError } from 'zod'
 import { fromZodError } from 'zod-validation-error'
 import { BlogFetchSchema } from '@schemas/Blog'
 
-import BlogPost from '@entities/BlogPost'
-import Blog from '@entities/Blog'
+import BlogPost from '~/_entities/BlogPost'
+import Blog from '~/_entities/Blog'
 
 import type { IBlogFetch } from '@dto/Blog'
 

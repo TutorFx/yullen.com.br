@@ -1,5 +1,5 @@
 import type { IBlogFetch, IBlogQuery } from '@dto/Blog'
-import type Blog from '@entities/Blog'
+import type Blog from '~/_entities/Blog'
 import { cms } from '@/constants'
 import { BlogProcessor } from '@/server/utils/DirectusProcessors'
 
