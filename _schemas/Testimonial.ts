@@ -1,12 +1,12 @@
 import { z } from 'zod'
 import { Status } from '@dto/Generic.d'
 
-export const BlogQuerySchema = z.object({
+export const TestimonialQuerySchema = z.object({
   search: z.string().optional(),
   page: z.preprocess((x) => Number(x), z.number())
 })
 
-export const BlogFetchSchema = z.object({
+export const TestimonialFetchSchema = z.object({
   data: z.array(
     z.object({
       id: z.string().uuid(),
@@ -19,7 +19,7 @@ export const BlogFetchSchema = z.object({
   ),
 })
 
-export const BlogPostSchema = z.object({
+export const TestimonialPostSchema = z.object({
   id: z.string().uuid(),
   status: z.nativeEnum(Status),
   dateCreated: z.string().datetime(),
@@ -28,7 +28,7 @@ export const BlogPostSchema = z.object({
   content: z.string(),
 })
 
-export const BlogSchema = z.object({
-  repository: z.array(BlogPostSchema),
+export const TestimonialSchema = z.object({
+  repository: z.array(TestimonialPostSchema),
   page: z.number().positive()
 })
