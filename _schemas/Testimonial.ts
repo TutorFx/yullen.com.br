@@ -3,7 +3,7 @@ import { Status } from '@dto/Generic.d'
 
 export const TestimonialQuerySchema = z.object({
   search: z.string().optional(),
-  page: z.preprocess((x) => Number(x), z.number())
+  page: z.preprocess(x => Number(x), z.number()),
 })
 
 export const TestimonialFetchSchema = z.object({
@@ -30,5 +30,5 @@ export const TestimonialPostSchema = z.object({
 
 export const TestimonialSchema = z.object({
   repository: z.array(TestimonialPostSchema),
-  page: z.number().positive()
+  page: z.number().positive(),
 })

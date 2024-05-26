@@ -2,8 +2,8 @@ import type { ITestimonial } from '@dto/Testimonial'
 import { TestimonialSchema } from '@schemas/Testimonial'
 
 export default class implements ITestimonial {
-  repository;
-  page;
+  repository
+  page
 
   constructor(content: ITestimonial) {
     TestimonialSchema.parse(content)

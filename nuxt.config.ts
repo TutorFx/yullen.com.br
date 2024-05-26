@@ -4,14 +4,22 @@ import { appDescription, cms } from './constants/index'
 
 export default defineNuxtConfig({
   modules: [
-    '@vueuse/nuxt',
     '@unocss/nuxt',
+    '@vueuse/nuxt',
+    'nuxt-icon',
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
     '@nuxt/eslint',
     'nuxt-directus',
+    '@nuxtjs/google-fonts',
   ],
+
+  googleFonts: {
+    families: {
+      'DM Mono': true,
+    },
+  },
 
   runtimeConfig: {
     public: {
@@ -42,11 +50,6 @@ export default defineNuxtConfig({
       options: {
         target: 'esnext',
       },
-    },
-    prerender: {
-      crawlLinks: false,
-      routes: ['/'],
-      ignore: ['/hi'],
     },
   },
 

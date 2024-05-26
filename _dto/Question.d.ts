@@ -3,7 +3,7 @@ import type {
   QuestionFetchSchema,
   QuestionPostSchema,
   QuestionQuerySchema,
-  QuestionSchema
+  QuestionSchema,
 } from '@schemas/Question'
 
 export type IQuestionQuery = z.infer<

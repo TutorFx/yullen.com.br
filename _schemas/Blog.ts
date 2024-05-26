@@ -3,7 +3,7 @@ import { Status } from '@dto/Generic.d'
 
 export const BlogQuerySchema = z.object({
   search: z.string().optional(),
-  page: z.preprocess((x) => Number(x), z.number())
+  page: z.preprocess(x => Number(x), z.number()),
 })
 
 export const BlogFetchSchema = z.object({
@@ -30,5 +30,5 @@ export const BlogPostSchema = z.object({
 
 export const BlogSchema = z.object({
   repository: z.array(BlogPostSchema),
-  page: z.number().positive()
+  page: z.number().positive(),
 })

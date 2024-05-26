@@ -1,9 +1,10 @@
 import type { z } from 'zod'
-import type { 
-    BlogFetchSchema, 
-    BlogPostSchema, 
-    BlogQuerySchema, 
-    BlogSchema } from '@schemas/Blog'
+import type {
+  BlogFetchSchema,
+  BlogPostSchema,
+  BlogQuerySchema,
+  BlogSchema,
+} from '@schemas/Blog'
 
 export type IBlogQuery = z.infer<
     typeof BlogQuerySchema

@@ -1,9 +1,10 @@
 import type { z } from 'zod'
-import type { 
-    TestimonialFetchSchema, 
-    TestimonialPostSchema, 
-    TestimonialQuerySchema, 
-    TestimonialSchema } from '@schemas/Testimonial'
+import type {
+  TestimonialFetchSchema,
+  TestimonialPostSchema,
+  TestimonialQuerySchema,
+  TestimonialSchema,
+} from '@schemas/Testimonial'
 
 export type ITestimonialQuery = z.infer<
     typeof TestimonialQuerySchema
