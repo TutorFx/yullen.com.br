@@ -1,5 +1,6 @@
 <template>
   <div>
-    dawfaw
+    <HeroVideo />
+    <WhiteZone />
   </div>
 </template>

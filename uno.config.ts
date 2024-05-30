@@ -4,18 +4,13 @@ import {
   presetIcons,
   presetTypography,
   presetUno,
-  presetWind,
+  presetWebFonts,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
 
-import defaultTheme from 'tailwindcss/defaultTheme'
-
 export default defineConfig({
   theme: {
-    fontFamily: {
-      sans: ['DM Mono', ...defaultTheme.fontFamily.sans].join(','),
-    },
     colors: {
       primary: {
         DEFAULT: '#ee4469',
@@ -86,8 +81,12 @@ export default defineConfig({
     presetIcons({
       scale: 1.2,
     }),
+    presetWebFonts({
+      fonts: {
+        sans: 'DM Mono',
+      },
+    }),
     presetTypography(),
-    presetWind(),
   ],
   transformers: [
     transformerDirectives(),

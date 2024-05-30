@@ -8,11 +8,12 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-icon',
     '@pinia/nuxt',
-    '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
     '@nuxt/eslint',
     'nuxt-directus',
     '@nuxtjs/google-fonts',
+    "@nuxt/image",
+    "@nuxtjs/i18n"
   ],
 
   googleFonts: {
@@ -29,6 +30,19 @@ export default defineNuxtConfig({
     },
   },
 
+  i18n: {
+    defaultLocale: 'pt-BR',
+    locales: [
+      {
+        code: 'pt-BR',
+        name: 'Português',
+        iso: 'pt-BR',
+        file: 'pt-BR.ts',
+      },
+    ],
+    langDir: 'locales/',
+  },
+
   experimental: {
     // when using generate, payload js assets included in sw precache manifest
     // but missing on offline, disabling extraction it until fixed
@@ -40,10 +54,6 @@ export default defineNuxtConfig({
   css: [
     '@unocss/reset/tailwind.css',
   ],
-
-  colorMode: {
-    classSuffix: '',
-  },
 
   nitro: {
     esbuild: {
