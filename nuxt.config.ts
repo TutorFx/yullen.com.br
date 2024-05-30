@@ -12,8 +12,8 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     'nuxt-directus',
     '@nuxtjs/google-fonts',
-    "@nuxt/image",
-    "@nuxtjs/i18n"
+    '@nuxt/image',
+    '@nuxtjs/i18n',
   ],
 
   googleFonts: {

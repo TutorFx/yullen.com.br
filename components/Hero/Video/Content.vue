@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="col-span-10 aspect-[1318/741] w-full overflow-hidden rounded-2xl">
-        <NuxtImg placeholder class="min-h-full min-w-full" src="YullenBracosCruzados.png" />
+      <NuxtImg placeholder class="min-h-full min-w-full" src="YullenBracosCruzados.png" />
     </div>
     <div class="relative col-span-1">
       <div class="absolute bottom-0 -ml-[100%]">
