@@ -11,7 +11,6 @@ const props = withDefaults(
     color?: Style
     rounded?: boolean
     loading?: boolean
-    ghost?: boolean
   }>(),
   {
     color: 'primary',
@@ -19,7 +18,6 @@ const props = withDefaults(
     outlined: false,
     loading: false,
     rounded: false,
-    ghost: false,
   },
 )
 
@@ -27,22 +25,22 @@ const NuxtLink = resolveComponent('NuxtLink')
 
 const styles = {
   primary: {
-    inside: 'text-primary-content',
-    outside: `bg-primary hover:bg-primary-600`,
+    inside: 'text-primary-content bg-primary border-black border-3',
+    outside: 'bg-black',
   },
   secondary: {
-    inside: 'text-secondary-content',
-    outside: `bg-secondary hover:bg-secondary-600`,
+    inside: 'text-black bg-secondary border-black border-3',
+    outside: 'bg-black',
   },
 }
 
 const sizes = {
   md: {
-    inside: 'text-md px-3 py-2 rounded-lg',
+    inside: 'text-md px-3 py-2 rounded-lg -top-1 -left-1 -group-hover:top-.5 -group-hover:left-.5',
     outside: 'rounded-lg',
   },
   sm: {
-    inside: 'text-sm px-2 py-1 rounded-md',
+    inside: 'text-sm px-2 py-1 rounded-md -top-1 -left-1 -group-hover:top-.5 -group-hover:left-.5',
     outside: 'rounded-md',
   },
 }
@@ -52,7 +50,7 @@ type Size = keyof typeof sizes
 
 const outside = computed(() =>
   twMerge(
-    'cursor-inherit group cursor-pointer',
+    'cursor-inherit mt-2 ml-2 group cursor-pointer',
     sizes[props.size].outside,
     styles[props.color].outside,
   ),

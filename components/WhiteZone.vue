@@ -1,6 +1,8 @@
+
+
 <template>
   <WhiteZoneContainer>
-    <div class="grid gap-24">
+    <div class="grid gap-32">
       <SectionText
         :title="$t('remote.title')"
         :paragraph="$t('remote.paragraph')"
@@ -41,14 +43,6 @@
           ]"
           theme="light"
           alignment="start"
-        />
-      </div>
-      <div>
-        <SectionText
-          :title="$t('plans.title')"
-          :paragraph="$t('plans.paragraph')"
-          theme="light"
-          alignment="center"
         />
       </div>
       <Plans />

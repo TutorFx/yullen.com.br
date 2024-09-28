@@ -84,7 +84,7 @@ const btnClasses = computed(() =>
 <template>
   <div :class="containerClasses">
     <div class="grid gap-6">
-      <div class="grid max-w-3xl gap-3">
+      <div class="grid gap-3">
         <h3 v-if="accent" :class="accentClasses" v-html="accent"/>
         <h1 :class="titleClasses" v-html="title"/>
         <div :class="paragraphClasses" v-html="paragraph"/>

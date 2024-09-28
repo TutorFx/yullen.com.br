@@ -33,7 +33,7 @@
       <div class="grid grid-flow-col items-center justify-end gap-3">
         <div class="grid-flow-col hidden items-center gap-1 sm:grid">
           <BtnFlat
-            v-for="(item, i) in Menu" :key="`menu-item-${i}-desktop`" :to="item.to" ghost color="secondary"
+            v-for="(item, i) in Menu" :key="`menu-item-${i}-desktop`" :to="item.to" color="secondary"
             size="sm"
           >
             {{ item.text }}
