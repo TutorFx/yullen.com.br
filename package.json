@@ -24,6 +24,7 @@
     "@nuxt/eslint": "^0.3.13",
     "@nuxt/fonts": "^0.7.2",
     "@nuxt/image": "^1.8.0",
+    "@nuxtjs/apollo": "^5.0.0-alpha.14",
     "@nuxtjs/color-mode": "^3.5.1",
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/i18n": "^8.5.5",

@@ -1,5 +1,5 @@
 import { fileURLToPath } from 'node:url'
-import { appDescription, cms } from './app/constants'
+import { appDescription, cms, graphqlRoot } from './app/constants'
 import { pwa } from './app/config/pwa'
 
 export default defineNuxtConfig({
@@ -14,7 +14,16 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/i18n',
     '@vite-pwa/nuxt',
+    '@nuxtjs/apollo'
   ],
+
+  apollo: {
+    clients: {
+      default: {
+        httpEndpoint: `${cms}${graphqlRoot}`
+      }
+    },
+  },
 
   googleFonts: {
     families: {
