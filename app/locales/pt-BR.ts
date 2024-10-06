@@ -42,7 +42,11 @@ export default defineI18nLocale(async () => {
 
     plans: {
       'better-choice': 'Melhor Escolha',
-      'price-description': 'Cobrado Mensalmente',
+      'price-description-monthly': 'Cobrado Mensalmente',
+
+      features: {
+        
+      },
 
       choose: 'Selecionar',
 

@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { menuData } from '~/constants';
+
 
 const menuVisible = useScrollLock(document)
+const menu = ref(menuData)
 
 
 </script>
@@ -15,7 +18,7 @@ const menuVisible = useScrollLock(document)
       <div class="grid grid-flow-col items-center justify-end gap-3">
         <div class="grid-flow-col hidden items-center gap-1 sm:grid">
           <BtnFlat
-            v-for="(item, i) in Menu" :key="`menu-item-${i}-desktop`" :to="item.to" color="secondary"
+            v-for="(item, i) in menu" :key="`menu-item-${i}-desktop`" :to="item.to" color="secondary"
             size="sm"
           >
             {{ item.text }}
@@ -50,7 +53,7 @@ const menuVisible = useScrollLock(document)
         </div>
         <div class="grid items-center bg-secondary-600 p-3 text-3xl">
           <div>
-            <Btn v-for="(item, i) in Menu" :key="`menu-item-${i}-mobile`" :to="item.to">
+            <Btn v-for="(item, i) in menu" :key="`menu-item-${i}-mobile`" :to="item.to">
               {{ item.text }}
             </Btn>
           </div>

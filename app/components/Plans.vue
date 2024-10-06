@@ -26,7 +26,7 @@ const cards = computed(() => {
     </div>
     <div>
       <div class="grid items-center gap-6 md:grid-cols-3">
-        <PlansCard v-for="(card, i) in cards" :key="i" v-bind="card" />
+        <PlansCard v-for="(card, i) in cards" :key="i" v-bind="card" :variant="usePlanColor(i)" />
       </div>
     </div>
   </div>

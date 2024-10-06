@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@nuxt/image',
     '@nuxtjs/i18n',
+    '@vite-pwa/nuxt',
   ],
 
   googleFonts: {
