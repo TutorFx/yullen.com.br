@@ -1,4 +1,11 @@
+import { type ClassValue, clsx } from 'clsx'
+import { twMerge } from 'tailwind-merge'
 import type { NuxtLinkProps } from '#app'
+import type { PlanCardProps } from '~~/types'
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
 
 interface IMenu extends NuxtLinkProps {
   text: string
@@ -19,38 +26,35 @@ export const Menu: IMenu[] = [
   },
 ]
 
-interface IPlanOption {
-  title: string
-  paragraph: string
-  price: string
-  features: string[]
-}
-
-export function getPlanOptions(): IPlanOption[] {
+export function getPlanOptions(mode: string): PlanCardProps[] {
   const nuxtApp = useNuxtApp()
   const { t } = nuxtApp.$i18n
 
   return [
     {
-      title: t('plans.essentials.title'),
-      paragraph: t('plans.essentials.paragraph'),
-      price: t('plans.essentials.price'),
+      title: t(`${mode}.essentials.title`),
+      paragraph: t(`${mode}.essentials.paragraph`),
+      price: t(`${mode}.essentials.price`),
+      variant: 'primary',
       features: [
         '',
       ],
     },
     {
-      title: t('plans.advanced.title'),
-      paragraph: t('plans.advanced.paragraph'),
-      price: t('plans.advanced.price'),
+      title: t(`${mode}.advanced.title`),
+      paragraph: t(`${mode}.advanced.paragraph`),
+      price: t(`${mode}.advanced.price`),
+      variant: 'primary',
       features: [
         '',
       ],
+      betterChoice: true,
     },
     {
-      title: t('plans.premium.title'),
-      paragraph: t('plans.premium.paragraph'),
-      price: t('plans.premium.price'),
+      title: t(`${mode}.premium.title`),
+      paragraph: t(`${mode}.premium.paragraph`),
+      price: t(`${mode}.premium.price`),
+      variant: 'primary',
       features: [
         '',
       ],

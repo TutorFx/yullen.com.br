@@ -1,5 +1,3 @@
-
-
 <template>
   <WhiteZoneContainer>
     <div class="grid gap-32">
@@ -30,15 +28,15 @@
           :list="[
             {
               title: $t('steps.discover-yourself.title'),
-              paragraph: $t('steps.discover-yourself.paragraph')
+              paragraph: $t('steps.discover-yourself.paragraph'),
             },
             {
               title: $t('steps.track-your-progress.title'),
-              paragraph: $t('steps.track-your-progress.paragraph')
+              paragraph: $t('steps.track-your-progress.paragraph'),
             },
             {
               title: $t('steps.evolve-constantly.title'),
-              paragraph: $t('steps.evolve-constantly.paragraph')
+              paragraph: $t('steps.evolve-constantly.paragraph'),
             },
           ]"
           theme="light"

@@ -1,4 +1,6 @@
 <script setup lang="ts" generic="T extends string">
+const { t } = useI18n()
+
 defineProps<{
   options: T[]
 }>()

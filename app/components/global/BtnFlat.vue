@@ -11,6 +11,7 @@ const props = withDefaults(
     color?: Style
     rounded?: boolean
     loading?: boolean
+    ghost?: boolean
   }>(),
   {
     color: 'primary',
@@ -18,6 +19,7 @@ const props = withDefaults(
     outlined: false,
     loading: false,
     rounded: false,
+    ghost: false,
   },
 )
 
@@ -25,22 +27,26 @@ const NuxtLink = resolveComponent('NuxtLink')
 
 const styles = {
   primary: {
-    inside: 'text-primary-content bg-primary border-black border-3',
-    outside: 'bg-black',
+    inside: 'text-primary-content',
+    outside: `bg-primary hover:bg-primary-600`,
   },
   secondary: {
-    inside: 'text-black bg-secondary border-black border-3',
-    outside: 'bg-black',
+    inside: 'text-secondary-content',
+    outside: `bg-secondary hover:bg-secondary-600`,
+  },
+  base: {
+    inside: 'text-secondary-content',
+    outside: `bg-black hover:bg-gray-900`,
   },
 }
 
 const sizes = {
   md: {
-    inside: 'text-md px-3 py-2 rounded-lg -top-1 -left-1 -group-hover:top-.5 -group-hover:left-.5',
+    inside: 'text-md px-3 py-2 rounded-lg',
     outside: 'rounded-lg',
   },
   sm: {
-    inside: 'text-sm px-2 py-1 rounded-md -top-1 -left-1 -group-hover:top-.5 -group-hover:left-.5',
+    inside: 'text-sm px-2 py-1 rounded-md',
     outside: 'rounded-md',
   },
 }
@@ -50,9 +56,10 @@ type Size = keyof typeof sizes
 
 const outside = computed(() =>
   twMerge(
-    'cursor-inherit mt-2 ml-2 group cursor-pointer',
+    'cursor-inherit group cursor-pointer',
     sizes[props.size].outside,
     styles[props.color].outside,
+    props.ghost? 'bg-stone-300 hover:bg-stone-400':'',
   ),
 )
 
@@ -61,6 +68,7 @@ const inside = computed(() =>
     'text-center inline-block relative transition-all transition-ease-in-out group-active:!top-0 group-active:!left-0',
     sizes[props.size].inside,
     styles[props.color].inside,
+    props.ghost? 'text-stone-900 hover:text-black':'',
   ),
 )
 </script>
@@ -72,6 +80,7 @@ const inside = computed(() =>
     :class="outside"
     :to
     :href
+    v-bind="{ ...$attrs }"
   >
     <div class="select-none" :class="inside">
       <Icon

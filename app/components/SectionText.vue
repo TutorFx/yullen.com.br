@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { twMerge } from 'tailwind-merge'
+import { cva } from 'class-variance-authority'
 import type { RouteLocationRaw } from '#vue-router'
+
+
 
 const props = withDefaults(
   defineProps<{

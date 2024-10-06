@@ -1,14 +1,13 @@
 import { fileURLToPath } from 'node:url'
-import { pwa } from './config/pwa'
-import { appDescription, cms } from './constants/index'
+import { appDescription, cms } from './app/constants'
+import { pwa } from './app/config/pwa'
 
 export default defineNuxtConfig({
   modules: [
-    '@unocss/nuxt',
+    '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
     'nuxt-icon',
     '@pinia/nuxt',
-    '@vite-pwa/nuxt',
     '@nuxt/eslint',
     'nuxt-directus',
     '@nuxtjs/google-fonts',
@@ -36,24 +35,11 @@ export default defineNuxtConfig({
       {
         code: 'pt-BR',
         name: 'Português',
-        iso: 'pt-BR',
         file: 'pt-BR.ts',
       },
     ],
     langDir: 'locales/',
   },
-
-  experimental: {
-    // when using generate, payload js assets included in sw precache manifest
-    // but missing on offline, disabling extraction it until fixed
-    payloadExtraction: false,
-    renderJsonPayloads: true,
-    typedPages: true,
-  },
-
-  css: [
-    '@unocss/reset/tailwind.css',
-  ],
 
   nitro: {
     esbuild: {
@@ -87,11 +73,6 @@ export default defineNuxtConfig({
     enabled: true,
   },
 
-  features: {
-    // For UnoCSS
-    inlineStyles: false,
-  },
-
   eslint: {
     config: {
       standalone: false,
@@ -100,13 +81,19 @@ export default defineNuxtConfig({
 
   alias: {
     '@dto': fileURLToPath(
-      new URL('./_dto', import.meta.url),
+      new URL('./app/_dto', import.meta.url),
     ),
     '@schemas': fileURLToPath(
-      new URL('./_schemas', import.meta.url),
+      new URL('./app/_schemas', import.meta.url),
     ),
     '@entities': fileURLToPath(
-      new URL('./_entities', import.meta.url),
+      new URL('./app/_entities', import.meta.url),
     ),
   },
+
+  future: {
+    compatibilityVersion: 4,
+  },
+
+  compatibilityDate: '2024-09-27',
 })

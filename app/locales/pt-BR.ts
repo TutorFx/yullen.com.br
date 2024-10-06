@@ -44,29 +44,52 @@ export default defineI18nLocale(async () => {
       'better-choice': 'Melhor Escolha',
       'price-description': 'Cobrado Mensalmente',
 
+      choose: 'Selecionar',
+
       title: 'Encontre o plano perfeito para sua jornada',
       paragraph: 'Cada pessoa é única, e sua jornada rumo a um estilo de vida saudável também deve ser. Por isso, ofereço diferentes planos de personal training online, pensados para atender às suas necessidades e objetivos específicos. Seja qual for o seu ponto de partida, juntos podemos construir um caminho para uma versão mais forte, saudável e feliz de você.',
-      
-      online: 'Online',
-      offline: 'Presencial',
 
-      essentials: {
-        title: 'Essencial',
-        paragraph: 'Ideal para quem busca um ponto de partida sólido com treinos personalizados.',
-        price: 400
+      offline: {
+        title: 'Presencial',
+        essentials: {
+          title: 'Essencial',
+          paragraph: 'Ideal para quem busca um ponto de partida sólido com treinos personalizados.',
+          price: 'R$ 400,00'
+        },
+  
+        advanced: {
+          title: 'Avançado',
+          paragraph: 'Acompanhamento mais próximo com ajustes constantes e foco em performance.',
+          price: 'R$ 800,00'
+        },
+  
+        premium: {
+          title: 'Premium',
+          paragraph: 'Experiência completa com personalização total, incluindo plano nutricional.',
+          price: 'R$ 1800,00'
+        },
       },
 
-      advanced: {
-        title: 'Avançado',
-        paragraph: 'Acompanhamento mais próximo com ajustes constantes e foco em performance.',
-        price: 400
-      },
-
-      premium: {
-        title: 'Premium',
-        paragraph: 'Experiência completa com personalização total, incluindo plano nutricional.',
-        price: 400
-      },
+      online: {
+        title: 'Online',
+        essentials: {
+          title: 'Essencial',
+          paragraph: 'Ideal para quem busca um ponto de partida sólido com treinos personalizados.',
+          price: 'R$ 400,00'
+        },
+  
+        advanced: {
+          title: 'Avançado',
+          paragraph: 'Acompanhamento mais próximo com ajustes constantes e foco em performance.',
+          price: 'R$ 800,00'
+        },
+  
+        premium: {
+          title: 'Premium',
+          paragraph: 'Experiência completa com personalização total, incluindo plano nutricional.',
+          price: 'R$ 1800,00'
+        },
+      }
     },
 
     testimonial: {
