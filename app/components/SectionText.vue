@@ -105,7 +105,7 @@ const btnClasses = computed(() =>
       </ol>
       <div v-if="button" class="grid" :class="btnClasses">
         <div>
-          <Btn :to="button.path">
+          <Btn variant="extruded" :to="button.path">
             {{ button.title }}
           </Btn>
         </div>

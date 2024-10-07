@@ -1,5 +1,6 @@
 import { fileURLToPath } from 'node:url'
-import { appDescription, cms, graphqlRoot } from './app/constants'
+import process from 'node:process'
+import { appDescription, cms, graphqlRoot, site } from './app/constants'
 import { pwa } from './app/config/pwa'
 
 export default defineNuxtConfig({
@@ -14,14 +15,14 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/i18n',
     '@vite-pwa/nuxt',
-    '@nuxtjs/apollo'
+    '@nuxtjs/apollo',
   ],
 
   apollo: {
     clients: {
       default: {
-        httpEndpoint: `${cms}${graphqlRoot}`
-      }
+        httpEndpoint: process.env.NODE_ENV === "development" ? `http://localhost:3000/${graphqlRoot}` : `${site}${graphqlRoot}`,
+      },
     },
   },
 
@@ -36,6 +37,12 @@ export default defineNuxtConfig({
       directus: {
         url: cms,
       },
+    },
+  },
+
+  routeRules: {
+    [`/${graphqlRoot}**`]: {
+      proxy: `${cms}${graphqlRoot}`,
     },
   },
 

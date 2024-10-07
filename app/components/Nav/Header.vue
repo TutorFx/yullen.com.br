@@ -17,15 +17,15 @@ const menu = ref(menuData)
 
       <div class="grid grid-flow-col items-center justify-end gap-3">
         <div class="grid-flow-col hidden items-center gap-1 sm:grid">
-          <BtnFlat
+          <Btn
             v-for="(item, i) in menu" :key="`menu-item-${i}-desktop`" :to="item.to" color="secondary"
             size="sm"
           >
             {{ item.text }}
-          </BtnFlat>
+          </Btn>
         </div>
         <div class="grid items-center">
-          <Btn to="ada" size="sm">
+          <Btn variant="extruded" to="ada" size="sm">
             CONTATO
           </Btn>
         </div>

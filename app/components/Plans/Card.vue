@@ -24,25 +24,26 @@ withDefaults(
             <div class="text-3xl">
               {{ title }}
             </div>
-            <div class="text-balance">
-              {{ paragraph }}
-            </div>
+            <div v-html="paragraph" class="text-balance" />
             <div>
               {{ price }}
             </div>
-            <div class="text-xs">
+            <div v-if="price" class="text-xs">
               {{ priceDescription }}
             </div>
           </div>
         </div>
       </div>
-      <div class="grid p-3">
-        <ul v-if="features && features.length > 0">
-          <li v-for="(item, i) in features" :key="i" />
+      <div class="grid p-3 gap-3">
+        <ul v-if="features && features.length > 0" class="px-2 py-2 grid gap-1">
+          <li v-for="(item, i) in features" :key="i" class="grid gap-3 grid-flow-col items-center justify-start">
+            <Icon class="text-[--color]" size="14" name="material-symbols:asterisk" />
+            <span class="text-sm">{{ item }}</span>
+          </li>
         </ul>
-        <BtnFlat color="base">
+        <Btn color="base">
           {{ $t('plans.choose') }}
-        </BtnFlat>
+        </Btn>
       </div>
     </div>
   </div>

@@ -1,13 +1,29 @@
 <script setup lang="ts">
-import { getPlanOptions } from '~~/utils'
+const online = ref(true)
 
-const options = ['plans.online.title', 'plans.offline.title']
-const model = ref<string>('plans.online.title')
+const { locale: lang } = useI18n()
 
-const cards = computed(() => {
-  const path = model.value.split('.')
-  path.pop()
-  return getPlanOptions(path.join('.'))
+const query = gql`
+    query PlanosQuery($online: Boolean, $lang: String) {
+        Planos(filter: { online: { _eq: $online } }) {
+            slug
+            periodicity
+            featured
+            variant
+            translations(filter: { languages_code: { _eq: $lang } }) {
+                languages_code
+                title
+                description
+                features
+                price
+            }
+        }
+    }
+`
+
+const { result } = useQuery<PlanosQuery>(query, {
+  online,
+  lang,
 })
 </script>
 
@@ -22,11 +38,11 @@ const cards = computed(() => {
       />
     </div>
     <div>
-      <Switcher v-model="model" :options />
+      <PlansSwitcher v-model="online" />
     </div>
-    <div>
-      <div class="grid items-center gap-6 md:grid-cols-3">
-        <PlansCard v-for="(card, i) in cards" :key="i" v-bind="card" :variant="usePlanColor(i)" />
+    <div v-if="result">
+      <div class="grid items-start gap-6 md:grid-cols-3 justify-center px-12 xl:px-24">
+        <PlansCard v-for="(card, i) in processPlanRequest(result)" :key="i" v-bind="card" :variant="usePlanColor(i)" />
       </div>
     </div>
   </div>
