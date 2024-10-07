@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   apollo: {
     clients: {
       default: {
-        httpEndpoint: process.env.NODE_ENV === "development" ? `http://localhost:3000/${graphqlRoot}` : `${site}${graphqlRoot}`,
+        httpEndpoint: process.env.NODE_ENV === "development" ? `http://localhost:3000/${graphqlRoot}` : `${cms}${graphqlRoot}`,
       },
     },
   },
