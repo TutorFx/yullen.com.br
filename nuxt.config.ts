@@ -40,6 +40,12 @@ export default defineNuxtConfig({
     },
   },
 
+  routeRules: {
+    [`/${graphqlRoot}**`]: {
+      proxy: `${cms}${graphqlRoot}`,
+    },
+  },
+
   i18n: {
     defaultLocale: 'pt-BR',
     locales: [
