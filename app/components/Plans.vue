@@ -41,7 +41,7 @@ const { result } = useQuery<PlanosQuery>(query, {
       <PlansSwitcher v-model="online" />
     </div>
     <div v-if="result">
-      <div class="grid items-start gap-6 md:grid-cols-3 justify-center px-12 xl:px-24">
+      <div class="grid items-start gap-6 md:grid-cols-3 justify-center px-4 lg:px-12 xl:px-24">
         <PlansCard v-for="(card, i) in processPlanRequest(result)" :key="i" v-bind="card" :variant="usePlanColor(i)" />
       </div>
     </div>

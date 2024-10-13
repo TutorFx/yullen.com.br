@@ -52,7 +52,7 @@ const menu = ref(menuData)
           </div>
         </div>
         <div class="grid items-center bg-secondary-600 p-3 text-3xl">
-          <div>
+          <div class="grid gap-3">
             <Btn v-for="(item, i) in menu" :key="`menu-item-${i}-mobile`" :to="item.to">
               {{ item.text }}
             </Btn>

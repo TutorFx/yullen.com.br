@@ -20,7 +20,7 @@
         <div class="aspect-square rounded-2xl bg-gray-200 max-md:order-0" />
       </div>
       <div class="grid items-center gap-12 md:grid-cols-2">
-        <div class="aspect-square rounded-2xl bg-gray-200" />
+        <NuxtImg class="rounded-2xl" src="/YullenPeso.png"></NuxtImg>
         <SectionText
           :title="$t('steps.title')"
           :paragraph="$t('steps.paragraph')"
