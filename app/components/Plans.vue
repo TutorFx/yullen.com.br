@@ -5,7 +5,7 @@ const { locale: lang } = useI18n()
 
 const query = gql`
     query PlanosQuery($online: Boolean, $lang: String) {
-        Planos(filter: { online: { _eq: $online } }) {
+        plans(filter: { online: { _eq: $online } }) {
             slug
             periodicity
             featured

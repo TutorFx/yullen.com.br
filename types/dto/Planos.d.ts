@@ -16,5 +16,5 @@ interface Plano {
 }
 
 interface PlanosQuery {
-    Planos: Plano[]
+    plans: Plano[]
 }

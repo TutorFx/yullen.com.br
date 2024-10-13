@@ -6,7 +6,7 @@ export function processPlanRequest(data: PlanosQuery | null): PlanCardProps[] | 
     const nuxtApp = useNuxtApp()
     const { locale, t } = nuxtApp.$i18n
 
-    const res = data.Planos.map((item) => {
+    const res = data.plans.map((item) => {
         const translation = item.translations.at(0) ?? null
 
         if (!translation) return null
