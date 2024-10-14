@@ -80,6 +80,10 @@ export default defineNuxtConfig({
 
   pwa,
 
+  routeRules: {
+    '/': { swr: true, prerender: true },
+  },
+
   devtools: {
     enabled: true,
   },
