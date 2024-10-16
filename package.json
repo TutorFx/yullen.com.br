@@ -2,10 +2,10 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "nuxi build",
+    "build": "bun nuxi build --bun",
     "dev:pwa": "VITE_PLUGIN_PWA=true nuxi dev",
     "dev": "nuxi dev --bun",
-    "generate": "nuxi generate",
+    "generate": "bun nuxi generate --bun",
     "postinstall": "nuxi prepare",
     "start": "node .output/server/index.mjs",
     "start:generate": "npx serve .output/public",
