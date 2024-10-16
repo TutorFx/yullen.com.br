@@ -1,6 +1,6 @@
 <template>
   <div class="bg-secondary">
-    <div class="rounded-t-3xl bg-white py-48 text-black">
+    <div class="rounded-t-3xl bg-white py-24 3xl:py-48 text-black">
       <Container>
         <slot />
       </Container>
