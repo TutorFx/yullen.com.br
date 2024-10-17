@@ -18,7 +18,8 @@ const menu = ref(menuData)
       <div class="grid grid-flow-col items-center justify-end gap-3">
         <div class="grid-flow-col hidden items-center gap-1 sm:grid">
           <Btn
-            v-for="(item, i) in menu" :key="`menu-item-${i}-desktop`" :to="item.to ? localePath(item.to) : undefined" color="secondary"
+            v-for="(item, i) in menu" :key="`menu-item-${i}-desktop`" :to="item.to ? localePath(item.to) : undefined" 
+            color="secondary"
             size="sm"
           >
             {{ item.text }}
@@ -42,18 +43,18 @@ const menu = ref(menuData)
     >
       <div class="grid grid-rows-[max-content_1fr]">
         <div class="grid grid-cols-[max-content_1fr] gap-3 p-3">
-          <NuxtLink to="/">
+          <NuxtLink :to="localePath({ name: 'index' })">
             <Logo width="120" />
           </NuxtLink>
           <div class="grid items-center justify-end">
-            <a class="text-black" @click="menuVisible = !menuVisible">
+            <button class="text-black" @click="menuVisible = !menuVisible">
               <Icon size="38" name="mdi:close" />
-            </a>
+            </button>
           </div>
         </div>
         <div class="grid items-center bg-secondary-600 p-3 text-3xl">
           <div class="grid gap-3">
-            <Btn v-for="(item, i) in menu" :key="`menu-item-${i}-mobile`" @click="menuVisible = !menuVisible" :to="item.to">
+            <Btn v-for="(item, i) in menu" :key="`menu-item-${i}-mobile`" @click="menuVisible = !menuVisible" :to="item.to ? localePath(item.to) : undefined">
               {{ item.text }}
             </Btn>
           </div>
