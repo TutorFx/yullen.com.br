@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { menuData } from '~/constants';
 
-
+const localePath = useLocalePath()
 const menuVisible = useScrollLock(document)
 const menu = ref(menuData)
 
@@ -11,14 +11,14 @@ const menu = ref(menuData)
 <template>
   <div class="py-3">
     <Container class="grid grid-cols-[max-content_1fr]">
-      <NuxtLink to="/">
+      <NuxtLink :to="localePath({ name: 'index'})">
         <Logo width="120" />
       </NuxtLink>
 
       <div class="grid grid-flow-col items-center justify-end gap-3">
         <div class="grid-flow-col hidden items-center gap-1 sm:grid">
           <Btn
-            v-for="(item, i) in menu" :key="`menu-item-${i}-desktop`" :to="item.to" color="secondary"
+            v-for="(item, i) in menu" :key="`menu-item-${i}-desktop`" :to="item.to ? localePath(item.to) : undefined" color="secondary"
             size="sm"
           >
             {{ item.text }}
@@ -26,7 +26,7 @@ const menu = ref(menuData)
         </div>
         <div class="grid items-center">
           <Btn variant="extruded" to="ada" size="sm">
-            CONTATO
+            {{ $t('contact.button') }}
           </Btn>
         </div>
         <a class="text-black sm:hidden" @click="menuVisible = !menuVisible">
@@ -53,7 +53,7 @@ const menu = ref(menuData)
         </div>
         <div class="grid items-center bg-secondary-600 p-3 text-3xl">
           <div class="grid gap-3">
-            <Btn v-for="(item, i) in menu" :key="`menu-item-${i}-mobile`" :to="item.to">
+            <Btn v-for="(item, i) in menu" :key="`menu-item-${i}-mobile`" @click="menuVisible = !menuVisible" :to="item.to">
               {{ item.text }}
             </Btn>
           </div>

@@ -28,7 +28,7 @@ const { result } = useQuery<PlanosQuery>(query, {
 </script>
 
 <template>
-  <div class="grid gap-12">
+  <div id="planos" class="grid gap-12">
     <div>
       <SectionText
         :title="$t('plans.title')"

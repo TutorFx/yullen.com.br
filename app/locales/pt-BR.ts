@@ -1,5 +1,9 @@
 export default defineI18nLocale(async () => {
   return {
+    nuxtSiteConfig: {
+      name: 'Yullen Personal',
+      description: 'Pare de perder tempo com treinos genéricos. Alcance resultados rápidos com um plano feito para você.',
+    },
     hero: {
       title: 'Treino sob medida para seu biotipo',
       paragraph: 'Pare de perder tempo com treinos genéricos. Alcance resultados rápidos com um plano feito para você.',
@@ -109,5 +113,9 @@ export default defineI18nLocale(async () => {
     },
 
     copyright: 'Todos os direitos reservados pela licença Creative Commons 4.0 - Yullen Personal {{date}}',
+
+    contact: {
+      button: 'CONTATO'
+    }
   }
 })

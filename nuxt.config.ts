@@ -16,6 +16,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     //'@vite-pwa/nuxt',
     '@nuxtjs/apollo',
+    '@nuxtjs/mdc',
+    '@nuxtjs/seo'
   ],
 
   apollo: {
@@ -91,6 +93,16 @@ export default defineNuxtConfig({
       'xxl': 1536,
       '2xl': 1536
     },
+    image: {
+      directus: {
+        // This URL needs to include the final `assets/` directory
+        baseURL: `${cms}assets/`,
+      }
+    }
+  },
+
+  site: {
+    url: site,
   },
 
   routeRules: {

@@ -38,13 +38,19 @@ const data = computed(() => {
   })
   .filter((item) => item !== null)
 })
+
+const localePath = useLocalePath()
 </script>
 
 <template>
-  <div class="py-12">
+  <div class="pt-12 grid grid-rows-[1fr_max-content]">
     <Container>
-      <div class="grid grid-cols-3 gap-6">
-        <NuxtLink v-for="item in data" :key="item.id" :to="`/blog/${item.id}`" class="border border-primary rounded-xl">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <NuxtLink 
+          v-for="item in data" :key="item.id" 
+          :to="localePath({ name: 'blog-id', params: { id: item.id }})" 
+          class="border border-primary rounded-xl"
+        >
           <div class="grid gap-4 p-4">
             <div class="flex flex-wrap gap-2" v-if="item.translation.tags">
               <span class="bg-red-500 px-2 py-1 rounded-md text-sm" v-for="tag in item.translation.tags" :key="tag">
@@ -59,5 +65,6 @@ const data = computed(() => {
         </NuxtLink>
       </div>
     </Container>
+    <Footer />
   </div>
 </template>

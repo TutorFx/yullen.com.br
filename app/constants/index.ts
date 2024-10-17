@@ -8,12 +8,8 @@ export const graphqlRoot = 'graphql/'
 
 export const menuData: IMenu[] = [
     {
-      to: '/planos',
+      to: { name: 'index', hash: '#planos' },
       text: 'PLANOS',
-    },
-    {
-      to: '/resultados',
-      text: 'RESULTADOS',
     },
     {
       to: '/blog',
